@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: rgb(59, 36, 36)
+        }
+        form {
+            text-decoration-color: aliceblue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body style="color: brown;">
+    <div></div>
+    <div class=container style="color: brown;">
+        <div class=col>
+            <form action="{{ url_for('main') }}" method="POST">
+            <fieldset>
+                <br>
+                <h1>Welcome to the Diabetes Prediction System </h1>
+                <br>
+                <legend>Input values collected from the tests</legend>
+                <br>
+                <h5>Number of Pregnancies : 
+                <input name="num_preg" type="number" placeholder="Enter value here!" required><br></h5>
+                <h5>Glucose Concentration : 
+                <input name="glucose_conc" type="number" placeholder="Enter value here!" required><br></h5>
+                <h5>Diastolic Blood Pressure : 
+                <input name="diastolic_bp" type="number" placeholder="Enter value here!" required><br></h5>
+                <h5>Thickness : 
+                <input name="thickness" type="number" placeholder="Enter value here!" required><br></h5>
+                <h5>Insulin : 
+                <input name="insulin" type="number" step='0.1' placeholder="Enter value here!" required></h5><br>
+                <h5>Body Mass Index : 
+                <input name="bmi" type="number" placeholder="Enter value here!" required><br></h5>
+                <h5>Diabetes Pedigree Function : 
+                <input name="diab_pred" type="number" step='0.001' placeholder="Enter value here!" required><br></h5>
+                <h5>Age in Years: 
+                <input name="age" type="number"  placeholder="Enter value here!" required><br></>
+                <h5>skin : 
+                <input name="skin" type="number" step='0.0001' placeholder="Enter value here!" required><br></h5>
+                <br>
+                <input type="submit" name="" id="">
+            </fieldset>
+            <br><br></form>
+            <div class='result' >
+                <br>Diabetes Prediction: <br>
+                <p style="font-size: 50px">{{ result }}</p>
+                <br><br>
+                Confidence factor: 
+                <p style="font-size: 50px">{{ confidence_factor }}</p>
+            </div> 
+        </div>
+    </div> 
+</body>
+</html>

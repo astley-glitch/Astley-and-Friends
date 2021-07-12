@@ -1,0 +1,11 @@
+Click
+Flask
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+pandas
+xgboost
+pickleshare==0.7.5
+scikit-learn==0.24.2
